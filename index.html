@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phaelix AI - Strategic AI for Ambitious Businesses</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>��</text></svg>">
+    <title data-key="pageTitle">Phaelix AI - Strategic AI for Ambitious Businesses</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <!-- Note: Tailwind CDN is used for development. For production, install Tailwind CSS as a PostCSS plugin -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,10 +21,17 @@
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Language Switcher -->
+            <nav class="language-switcher">
+                <button onclick="setLanguage('en')" class="lang-btn">English</button>
+                <button onclick="setLanguage('pt')" class="lang-btn">Português</button>
+                <button onclick="setLanguage('es')" class="lang-btn">Español</button>
+                <button onclick="setLanguage('fr')" class="lang-btn">Français</button>
+            </nav>
             <h1 class="text-2xl font-bold tracking-tighter text-white">
-                Phaelix<span class="gradient-text">AI</span>
+                <span data-key="brandName">Phaelix</span><span class="gradient-text">AI</span>
             </h1>
-            <a href="#contact" class="hidden sm:inline-block bg-indigo-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors glow-effect">
+            <a href="#contact" class="hidden sm:inline-block bg-indigo-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors glow-effect" data-key="contactUs">
                 Contact Us
             </a>
         </div>
@@ -52,14 +59,14 @@
                 <div class="text-center mb-16">
                     <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 px-4 py-2 rounded-full border border-indigo-500/30 mb-6">
                         <div class="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
-                        <span class="text-indigo-400 text-sm font-semibold tracking-wider">LIVE AI DEMO</span>
+                        <span class="text-indigo-400 text-sm font-semibold tracking-wider" data-key="liveDemoLabel">LIVE AI DEMO</span>
                     </div>
                     <h2 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-6">
-                        Meet <span class="gradient-text">RaphaelBot</span>
+                        <span data-key="meetRaphaelBot">Meet </span><span class="gradient-text">RaphaelBot</span>
                     </h2>
                     <p class="max-w-3xl mx-auto text-xl md:text-2xl text-slate-300 leading-relaxed">
-                        Experience the future of AI conversation. Our advanced language model is ready to assist, 
-                        <span class="text-indigo-400 font-semibold">24/7</span>.
+                        <span data-key="aiDemoDescription">Experience the future of AI conversation. Our advanced language model is ready to assist, </span>
+                        <span class="text-indigo-400 font-semibold" data-key="twentyFourSeven">24/7</span><span data-key="aiDemoDescriptionEnd">.</span>
                     </p>
                 </div>
                 
@@ -78,7 +85,7 @@
                                 </gradio-app>
                                 
                                 <!-- Floating status indicator -->
-                                <div class="absolute -top-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                                <div class="absolute -top-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg" data-key="liveStatus">
                                     LIVE
                                 </div>
                             </div>
@@ -92,8 +99,8 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                             </svg>
                                         </div>
-                                        <h4 class="text-white font-semibold mb-1">Lightning Fast</h4>
-                                        <p class="text-slate-400 text-sm">Instant responses powered by cutting-edge AI</p>
+                                        <h4 class="text-white font-semibold mb-1" data-key="lightningFast">Lightning Fast</h4>
+                                        <p class="text-slate-400 text-sm" data-key="lightningFastDesc">Instant responses powered by cutting-edge AI</p>
                                     </div>
                                     <div class="text-center">
                                         <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -101,8 +108,8 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                                             </svg>
                                         </div>
-                                        <h4 class="text-white font-semibold mb-1">Intelligent</h4>
-                                        <p class="text-slate-400 text-sm">Advanced language understanding and context</p>
+                                        <h4 class="text-white font-semibold mb-1" data-key="intelligent">Intelligent</h4>
+                                        <p class="text-slate-400 text-sm" data-key="intelligentDesc">Advanced language understanding and context</p>
                                     </div>
                                     <div class="text-center">
                                         <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -110,14 +117,14 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                                             </svg>
                                         </div>
-                                        <h4 class="text-white font-semibold mb-1">Secure</h4>
-                                        <p class="text-slate-400 text-sm">Enterprise-grade security and privacy</p>
+                                        <h4 class="text-white font-semibold mb-1" data-key="secure">Secure</h4>
+                                        <p class="text-slate-400 text-sm" data-key="secureDesc">Enterprise-grade security and privacy</p>
                                     </div>
                                 </div>
                                 
                                 <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
-                                    Start a conversation and experience the power of modern AI. 
-                                    <span class="text-indigo-400 font-semibold">Ask anything</span> about my career and how I can help you.
+                                    <span data-key="conversationPrompt">Start a conversation and experience the power of modern AI. </span>
+                                    <span class="text-indigo-400 font-semibold" data-key="askAnything">Ask anything</span><span data-key="conversationPromptEnd"> about my career and how I can help you.</span>
                                 </p>
                             </div>
                         </div>
@@ -137,8 +144,8 @@
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h3 class="text-base font-semibold text-indigo-400 tracking-wider">FEATURED PROJECT</h3>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">See Our AI in Action</h2>
+                    <h3 class="text-base font-semibold text-indigo-400 tracking-wider" data-key="featuredProjectLabel">FEATURED PROJECT</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2" data-key="seeAiInAction">See Our AI in Action</h2>
                 </div>
                 
                 <div class="max-w-6xl mx-auto">
@@ -162,7 +169,7 @@
                                     </div>
                                     
                                     <!-- Status badge -->
-                                    <div class="status-badge">
+                                    <div class="status-badge" data-key="liveDemoStatus">
                                         Live Demo
                                     </div>
                                 </div>
@@ -176,32 +183,32 @@
                             <div class="space-y-6">
                                 <div>
                                     <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">
-                                        <span class="gradient-text">Eco-Explorer</span> - Educational Gaming
+                                        <span class="gradient-text">Eco-Explorer</span><span data-key="educationalGaming"> - Educational Gaming</span>
                                     </h3>
-                                    <p class="text-slate-300 text-lg leading-relaxed">
+                                    <p class="text-slate-300 text-lg leading-relaxed" data-key="ecoExplorerDescription">
                                         An educational simulation game where players become Lead Ecologists in Brazil's Itatiaia National Park. Experience a living ecosystem with AI-powered features, dynamic weather, and real conservation impact.
                                     </p>
                                 </div>
                                 
                                 <!-- Key Features -->
                                 <div class="space-y-3">
-                                    <h4 class="text-lg font-semibold text-white">Key Features:</h4>
+                                    <h4 class="text-lg font-semibold text-white" data-key="keyFeatures">Key Features:</h4>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         <div class="flex items-center space-x-3">
                                             <div class="w-2 h-2 bg-indigo-400 rounded-full"></div>
-                                            <span class="text-slate-300">AI-Powered Eco-Log</span>
+                                            <span class="text-slate-300" data-key="aiPoweredEcoLog">AI-Powered Eco-Log</span>
                                         </div>
                                         <div class="flex items-center space-x-3">
                                             <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
-                                            <span class="text-slate-300">Living World Simulation</span>
+                                            <span class="text-slate-300" data-key="livingWorldSimulation">Living World Simulation</span>
                                         </div>
                                         <div class="flex items-center space-x-3">
                                             <div class="w-2 h-2 bg-pink-400 rounded-full"></div>
-                                            <span class="text-slate-300">Dynamic Weather System</span>
+                                            <span class="text-slate-300" data-key="dynamicWeatherSystem">Dynamic Weather System</span>
                                         </div>
                                         <div class="flex items-center space-x-3">
                                             <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-                                            <span class="text-slate-300">Conservation Impact</span>
+                                            <span class="text-slate-300" data-key="conservationImpact">Conservation Impact</span>
                                         </div>
                                     </div>
                                 </div>
@@ -210,21 +217,21 @@
                                 <div class="space-y-4 pt-6">
                                     <!-- Primary Action -->
                                     <a href="https://raphaelguerra.github.io/eco-explorer/" target="_blank" rel="noopener noreferrer" class="gradient-border inline-block glow-effect w-full">
-                                        <div class="text-white font-bold px-8 py-4 text-center">
+                                        <div class="text-white font-bold px-8 py-4 text-center" data-key="playDemo">
                                             🎮 Play Demo
                                         </div>
                                     </a>
                                     
                                     <!-- Secondary Actions Row -->
                                     <div class="grid grid-cols-2 gap-3">
-                                        <a href="https://raphaelguerra.github.io/eco-explorer-website/" target="_blank" rel="noopener noreferrer" class="bg-slate-800/50 text-white font-semibold px-4 py-3 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors text-center">
+                                        <a href="https://raphaelguerra.github.io/eco-explorer-website/" target="_blank" rel="noopener noreferrer" class="bg-slate-800/50 text-white font-semibold px-4 py-3 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors text-center" data-key="projectInfo">
                                             📋 Project Info
                                         </a>
                                         <a href="https://youtu.be/xxtkCPIoyWU?si=wgyXdYVw5BURI_Gu" target="_blank" rel="noopener noreferrer" class="bg-red-600/20 text-white font-semibold px-4 py-3 rounded-lg border border-red-500/30 hover:bg-red-600/30 transition-colors text-center flex items-center justify-center space-x-2">
                                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                                             </svg>
-                                            <span>Watch Video</span>
+                                            <span data-key="watchVideo">Watch Video</span>
                                         </a>
                                     </div>
                                 </div>
@@ -261,13 +268,13 @@
             
             <div class="container mx-auto px-6 text-center relative z-10">
                 <h2 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-4">
-                    Strategic AI for <span class="gradient-text">Ambitious Businesses</span>
+                    <span data-key="heroTitle">Strategic AI for </span><span class="gradient-text" data-key="heroTitleHighlight">Ambitious Businesses</span>
                 </h2>
-                <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 mb-8">
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 mb-8" data-key="heroDescription">
                     Phaelix AI bridges the gap between your business and its potential. We deliver custom AI solutions that automate processes, uncover critical insights, and drive sustainable growth for Small and Medium-sized Enterprises.
                 </p>
                 <a href="#contact" class="gradient-border inline-block">
-                    <div class="text-white font-bold text-lg">
+                    <div class="text-white font-bold text-lg" data-key="bookStrategySession">
                         Book a Free Strategy Session
                     </div>
                 </a>
@@ -281,18 +288,18 @@
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h3 class="text-base font-semibold text-indigo-400 tracking-wider">OUR STORY</h3>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">From Warrior Strategy to a Guide's Heart</h2>
+                    <h3 class="text-base font-semibold text-indigo-400 tracking-wider" data-key="ourStoryLabel">OUR STORY</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2" data-key="storyTitle">From Warrior Strategy to a Guide's Heart</h2>
                 </div>
                 <div class="gradient-border max-w-4xl mx-auto">
                     <div class="text-center">
-                        <p class="text-slate-300 text-lg md:text-xl mb-6">
+                        <p class="text-slate-300 text-lg md:text-xl mb-6" data-key="storyParagraph1">
                             Phaelix AI was born from a journey of purpose. It started with the founder's last name, <strong>Guerra</strong> (war), and a mission to help businesses fight inefficiency. But a challenge in securing a domain led to a moment of clarity—a "Phoenix moment."
                         </p>
-                        <p class="text-slate-300 text-lg md:text-xl mb-8">
+                        <p class="text-slate-300 text-lg md:text-xl mb-8" data-key="storyParagraph2">
                             The true mission wasn't about the fight, but the victory. The name <strong>Phaelix</strong> was created, combining <strong>Phae-</strong> (Greek for 'light'), <strong>Felix</strong> (Latin for 'success'), and the founder's own lifelong nickname, <strong>Phael</strong> (from Raphael), which represents guidance and healing.
                         </p>
-                        <blockquote class="border-l-4 border-indigo-500 pl-6 italic text-xl md:text-2xl text-white font-medium">
+                        <blockquote class="border-l-4 border-indigo-500 pl-6 italic text-xl md:text-2xl text-white font-medium" data-key="storyQuote">
                             "We bring the strategy of a warrior (Guerra) and the heart of a guide (Phael) to ensure your success (Felix)."
                         </blockquote>
                     </div>
@@ -307,8 +314,8 @@
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-16">
-                    <h3 class="text-base font-semibold text-indigo-400 tracking-wider">OUR SOLUTIONS</h3>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">The Tools for Your Transformation</h2>
+                    <h3 class="text-base font-semibold text-indigo-400 tracking-wider" data-key="ourSolutionsLabel">OUR SOLUTIONS</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2" data-key="solutionsTitle">The Tools for Your Transformation</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Solution Card 1 -->
@@ -317,8 +324,8 @@
                             <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto glow-effect">
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Intelligent Content & Media</h4>
-                            <p class="text-slate-400">We deploy AI to generate creative social media ideas, write marketing copy, and analyze campaign performance, ensuring your message resonates.</p>
+                            <h4 class="text-xl font-bold text-white mb-2" data-key="solution1Title">Intelligent Content & Media</h4>
+                            <p class="text-slate-400" data-key="solution1Description">We deploy AI to generate creative social media ideas, write marketing copy, and analyze campaign performance, ensuring your message resonates.</p>
                         </div>
                     </div>
                     <!-- Solution Card 2 -->
@@ -327,8 +334,8 @@
                             <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto glow-effect">
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Automated Process & Workflow</h4>
-                            <p class="text-slate-400">Transform your operations by automating tedious tasks. Our systems can analyze invoices, parse receipts, and manage data entry, freeing your team to focus on growth.</p>
+                            <h4 class="text-xl font-bold text-white mb-2" data-key="solution2Title">Automated Process & Workflow</h4>
+                            <p class="text-slate-400" data-key="solution2Description">Transform your operations by automating tedious tasks. Our systems can analyze invoices, parse receipts, and manage data entry, freeing your team to focus on growth.</p>
                         </div>
                     </div>
                     <!-- Solution Card 3 -->
@@ -337,8 +344,8 @@
                             <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto glow-effect">
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Custom AI Applications</h4>
-                            <p class="text-slate-400">Need a unique tool for your business? We develop custom, AI-powered applications that streamline your specific workflows and provide a competitive edge.</p>
+                            <h4 class="text-xl font-bold text-white mb-2" data-key="solution3Title">Custom AI Applications</h4>
+                            <p class="text-slate-400" data-key="solution3Description">Need a unique tool for your business? We develop custom, AI-powered applications that streamline your specific workflows and provide a competitive edge.</p>
                         </div>
                     </div>
                     <!-- Solution Card 4 -->
@@ -347,8 +354,8 @@
                             <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto glow-effect">
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                             </div>
-                            <h4 class="text-xl font-bold text-white mb-2">Data & Analytics Dashboards</h4>
-                            <p class="text-slate-400">We turn your raw data into your most valuable asset. Our AI-driven dashboards visualize key metrics, uncover hidden trends, and empower you to make smarter decisions.</p>
+                            <h4 class="text-xl font-bold text-white mb-2" data-key="solution4Title">Data & Analytics Dashboards</h4>
+                            <p class="text-slate-400" data-key="solution4Description">We turn your raw data into your most valuable asset. Our AI-driven dashboards visualize key metrics, uncover hidden trends, and empower you to make smarter decisions.</p>
                         </div>
                     </div>
                 </div>
@@ -361,8 +368,8 @@
             <div class="absolute inset-0" style="background: radial-gradient(circle at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);"></div>
             
             <div class="container mx-auto px-6 text-center relative z-10">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Ready to Unlock Your Potential?</h2>
-                <p class="max-w-2xl mx-auto text-lg text-slate-300 mb-8">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4" data-key="readyToUnlock">Ready to Unlock Your Potential?</h2>
+                <p class="max-w-2xl mx-auto text-lg text-slate-300 mb-8" data-key="contactDescription">
                     Let's have a conversation about your business, your goals, and how Phaelix AI can guide you on your journey to success. Your initial strategy session is always free.
                 </p>
                 <a href="mailto:raphaelguerra88@gmail.com" class="gradient-border inline-block glow-effect">
@@ -377,8 +384,8 @@
     <!-- Footer -->
     <footer class="bg-slate-900/50 border-t border-slate-800 relative">
         <div class="container mx-auto px-6 py-8 text-center text-slate-400">
-            <p>&copy; 2025 Phaelix AI. All Rights Reserved.</p>
-            <p class="text-sm mt-2">A new beginning for ambitious businesses.</p>
+            <p data-key="footerCopyright">&copy; 2025 Phaelix AI. All Rights Reserved.</p>
+            <p class="text-sm mt-2" data-key="footerTagline">A new beginning for ambitious businesses.</p>
         </div>
     </footer>
 
@@ -446,6 +453,136 @@
             }
         });
     </script>
+
+    <!-- Translation System -->
+    <script>
+        let currentLanguage = 'en';
+        let translations = {};
+
+        // Function to fetch translation file
+        async function fetchTranslations(lang) {
+            try {
+                const response = await fetch(`${lang}.json`);
+                const data = await response.json();
+                translations = data;
+            } catch (error) {
+                console.error(`Error loading translations for ${lang}:`, error);
+                // Fallback to English if translation file fails to load
+                if (lang !== 'en') {
+                    await fetchTranslations('en');
+                }
+            }
+        }
+
+        // Function to translate the page
+        function translatePage() {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[key]) {
+                    element.textContent = translations[key];
+                }
+            });
+        }
+
+        // Function to set language
+        async function setLanguage(lang) {
+            currentLanguage = lang;
+            await fetchTranslations(lang);
+            translatePage();
+            
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', lang);
+            
+            // Store language preference in localStorage
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Update active language button
+            updateLanguageButtons();
+        }
+
+        // Function to update language button styles
+        function updateLanguageButtons() {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                const btnLang = btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+                if (btnLang === currentLanguage) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Function to detect browser language
+        function detectBrowserLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langCode = browserLang.split('-')[0].toLowerCase();
+            
+            // Check if browser language is supported
+            const supportedLangs = ['en', 'pt', 'es', 'fr'];
+            if (supportedLangs.includes(langCode)) {
+                return langCode;
+            }
+            
+            // Default to English if not supported
+            return 'en';
+        }
+
+        // Initialize language system
+        async function initializeLanguage() {
+            // Check for stored language preference
+            const storedLang = localStorage.getItem('preferredLanguage');
+            const initialLang = storedLang || detectBrowserLanguage();
+            
+            await setLanguage(initialLang);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeLanguage);
+    </script>
+
+    <!-- Language switcher styles -->
+    <style>
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        .lang-btn {
+            padding: 0.25rem 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.25rem;
+            color: white;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .lang-btn.active {
+            background: rgba(99, 102, 241, 0.8);
+            border-color: rgba(99, 102, 241, 1);
+            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3);
+        }
+
+        @media (max-width: 640px) {
+            .language-switcher {
+                flex-wrap: wrap;
+                gap: 0.25rem;
+            }
+            
+            .lang-btn {
+                font-size: 0.625rem;
+                padding: 0.125rem 0.375rem;
+            }
+        }
+    </style>
 
 </body>
 </html>
