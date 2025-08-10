@@ -18,6 +18,7 @@ class MainApp {
         this.initializeSmoothScrolling();
         this.initializeScrollEffects();
         this.initializeContactForm();
+        this.initializeLazyGradio();
         
         this.isInitialized = true;
     }
@@ -246,6 +247,35 @@ class MainApp {
             const shape = document.createElement('div');
             shape.className = 'shape';
             shapesContainer.appendChild(shape);
+        }
+    }
+
+    /**
+     * Lazy-load Gradio app when in viewport
+     */
+    initializeLazyGradio() {
+        const gradioApp = document.querySelector('gradio-app[data-src]');
+        if (!gradioApp) return;
+
+        const load = () => {
+            if (!gradioApp.getAttribute('src')) {
+                gradioApp.setAttribute('src', gradioApp.getAttribute('data-src'));
+            }
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        load();
+                        observer.disconnect();
+                    }
+                });
+            }, { rootMargin: '200px' });
+            observer.observe(gradioApp);
+        } else {
+            // Fallback: load after DOM ready
+            setTimeout(load, 1000);
         }
     }
 }
