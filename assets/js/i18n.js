@@ -107,8 +107,23 @@ class I18nManager {
      */
     updatePageTitle() {
         const title = this.translations[this.currentLanguage]?.pageTitle;
+        const description = this.translations[this.currentLanguage]?.metaDescription;
+        if (title) document.title = title;
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"][data-key="metaDescription"]');
+        if (metaDesc && description) metaDesc.setAttribute('content', description);
+        // Update OG/Twitter dynamic fields
         if (title) {
-            document.title = title;
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            const twTitle = document.querySelector('meta[name="twitter:title"]');
+            ogTitle?.setAttribute('content', title);
+            twTitle?.setAttribute('content', title);
+        }
+        if (description) {
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            const twDesc = document.querySelector('meta[name="twitter:description"]');
+            ogDesc?.setAttribute('content', description);
+            twDesc?.setAttribute('content', description);
         }
     }
 
