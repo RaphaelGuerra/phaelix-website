@@ -1,0 +1,291 @@
+<!-- Brand Story Section - Example Implementation -->
+<!-- This section should be inserted after the Hero section in index.html -->
+
+<section id="brand-story" class="py-20 md:py-32 relative overflow-hidden">
+    <!-- Animated Phoenix-inspired background -->
+    <div class="absolute inset-0">
+        <!-- Phoenix particle effect -->
+        <div class="phoenix-particles absolute inset-0">
+            <div class="phoenix-particle" style="--delay: 0s; --duration: 8s;"></div>
+            <div class="phoenix-particle" style="--delay: 2s; --duration: 10s;"></div>
+            <div class="phoenix-particle" style="--delay: 4s; --duration: 12s;"></div>
+            <div class="phoenix-particle" style="--delay: 6s; --duration: 9s;"></div>
+        </div>
+        
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-slate-900"></div>
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 px-4 py-2 rounded-full border border-orange-500/30 mb-6">
+                <div class="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+                <span class="text-orange-400 text-sm font-semibold tracking-wider">THE PHOENIX STORY</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tighter mb-6">
+                From <span class="text-slate-500 line-through">Guerra</span> to <span class="gradient-text">Phaelix</span>
+            </h2>
+            <p class="max-w-3xl mx-auto text-xl md:text-2xl text-slate-300 leading-relaxed">
+                A transformation story of purpose, resilience, and illumination
+            </p>
+        </div>
+        
+        <!-- Etymology Breakdown -->
+        <div class="max-w-6xl mx-auto mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Phae- Card -->
+                <div class="etymology-card group" data-reveal="phae">
+                    <div class="gradient-border h-full transform transition-all duration-500 hover:scale-105">
+                        <div class="text-center h-full flex flex-col">
+                            <div class="text-6xl font-bold gradient-text mb-4">Phae-</div>
+                            <div class="text-sm text-indigo-400 uppercase tracking-wider mb-2">Ancient Greek: φαίνειν</div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Illuminate</h3>
+                            <p class="text-slate-300 flex-grow">
+                                To shine, to bring to light. We analyze your business data to bring clarity, making the invisible visible, illuminating your path to growth.
+                            </p>
+                            <div class="mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 mx-auto bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Felix Card -->
+                <div class="etymology-card group" data-reveal="felix">
+                    <div class="gradient-border h-full transform transition-all duration-500 hover:scale-105">
+                        <div class="text-center h-full flex flex-col">
+                            <div class="text-6xl font-bold gradient-text mb-4">Felix</div>
+                            <div class="text-sm text-purple-400 uppercase tracking-wider mb-2">Latin: Felix</div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Success</h3>
+                            <p class="text-slate-300 flex-grow">
+                                Happy, fortunate, fruitful, successful. The ultimate outcome for our clients - delivering prosperity and measurable results.
+                            </p>
+                            <div class="mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- -lix (Phoenix) Card -->
+                <div class="etymology-card group" data-reveal="lix">
+                    <div class="gradient-border h-full transform transition-all duration-500 hover:scale-105">
+                        <div class="text-center h-full flex flex-col">
+                            <div class="text-6xl font-bold gradient-text mb-4">-lix</div>
+                            <div class="text-sm text-red-400 uppercase tracking-wider mb-2">Latin: Lix (Ashes)</div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Phoenix</h3>
+                            <p class="text-slate-300 flex-grow">
+                                Rising from the ashes. We help businesses shed inefficient processes and emerge stronger, reborn as intelligent entities.
+                            </p>
+                            <div class="mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 mx-auto bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Personal Connection -->
+        <div class="max-w-4xl mx-auto">
+            <div class="gradient-border">
+                <div class="relative">
+                    <!-- Founder Image Placeholder -->
+                    <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
+                        <div class="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full border-4 border-slate-900 flex items-center justify-center">
+                            <span class="text-white text-3xl font-bold">RG</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-16 text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                            The Personal Promise
+                        </h3>
+                        <p class="text-lg text-slate-300 mb-6">
+                            <strong class="text-indigo-400">Phael</strong> - from Raphael, meaning "God heals" - represents my personal commitment as founder. Known as the divine healer and guide for journeys, this connection unifies our brand as a personal promise to every client.
+                        </p>
+                        <blockquote class="border-l-4 border-indigo-500 pl-6 text-xl md:text-2xl text-white font-medium italic">
+                            "We bring the strategy of a warrior <span class="text-red-400">(Guerra)</span> and the heart of a guide <span class="text-indigo-400">(Phael)</span> to ensure your success <span class="text-purple-400">(Felix)</span>."
+                        </blockquote>
+                        <p class="mt-6 text-slate-400">
+                            - Raphael Guerra, Founder & CEO
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Timeline -->
+        <div class="mt-20">
+            <h3 class="text-2xl font-bold text-white text-center mb-12">The Transformation Journey</h3>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-indigo-500 via-purple-500 to-red-500"></div>
+                
+                <!-- Timeline Events -->
+                <div class="space-y-12">
+                    <!-- Event 1 -->
+                    <div class="timeline-event" data-side="left">
+                        <div class="flex items-center">
+                            <div class="w-1/2 text-right pr-8">
+                                <h4 class="text-xl font-bold text-white mb-2">The Guerra Legacy</h4>
+                                <p class="text-slate-300">Born with a warrior's name, destined to fight inefficiency</p>
+                            </div>
+                            <div class="w-4 h-4 bg-red-500 rounded-full border-4 border-slate-900 z-10"></div>
+                            <div class="w-1/2"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 2 -->
+                    <div class="timeline-event" data-side="right">
+                        <div class="flex items-center">
+                            <div class="w-1/2"></div>
+                            <div class="w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-900 z-10"></div>
+                            <div class="w-1/2 pl-8">
+                                <h4 class="text-xl font-bold text-white mb-2">The Phoenix Moment</h4>
+                                <p class="text-slate-300">A domain challenge becomes a moment of clarity and rebirth</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 3 -->
+                    <div class="timeline-event" data-side="left">
+                        <div class="flex items-center">
+                            <div class="w-1/2 text-right pr-8">
+                                <h4 class="text-xl font-bold text-white mb-2">Phaelix Emerges</h4>
+                                <p class="text-slate-300">A name that embodies light, success, and transformation</p>
+                            </div>
+                            <div class="w-4 h-4 bg-indigo-500 rounded-full border-4 border-slate-900 z-10"></div>
+                            <div class="w-1/2"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Event 4 -->
+                    <div class="timeline-event" data-side="right">
+                        <div class="flex items-center">
+                            <div class="w-1/2"></div>
+                            <div class="w-4 h-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full border-4 border-slate-900 z-10 animate-pulse"></div>
+                            <div class="w-1/2 pl-8">
+                                <h4 class="text-xl font-bold text-white mb-2">Your Success Story</h4>
+                                <p class="text-slate-300">Join us in writing the next chapter of transformation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Additional CSS for this section -->
+<style>
+    /* Phoenix particle animation */
+    .phoenix-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: linear-gradient(45deg, #f97316, #ef4444, #fbbf24);
+        border-radius: 50%;
+        opacity: 0;
+        animation: phoenixRise var(--duration) infinite;
+        animation-delay: var(--delay);
+    }
+    
+    @keyframes phoenixRise {
+        0% {
+            transform: translateY(100vh) translateX(0) scale(0);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+            transform: translateY(50vh) translateX(calc(var(--random-x, 50) * 1px)) scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: translateY(0) translateX(calc(var(--random-x, -50) * 2px)) scale(1.5);
+        }
+        100% {
+            transform: translateY(-100px) translateX(calc(var(--random-x, 100) * 3px)) scale(0);
+            opacity: 0;
+        }
+    }
+    
+    /* Etymology cards hover effect */
+    .etymology-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards;
+    }
+    
+    .etymology-card:nth-child(1) { animation-delay: 0.2s; }
+    .etymology-card:nth-child(2) { animation-delay: 0.4s; }
+    .etymology-card:nth-child(3) { animation-delay: 0.6s; }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Timeline animations */
+    .timeline-event {
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: slideIn 0.6s forwards;
+    }
+    
+    .timeline-event[data-side="right"] {
+        transform: translateX(20px);
+    }
+    
+    .timeline-event:nth-child(1) { animation-delay: 0.2s; }
+    .timeline-event:nth-child(2) { animation-delay: 0.4s; }
+    .timeline-event:nth-child(3) { animation-delay: 0.6s; }
+    .timeline-event:nth-child(4) { animation-delay: 0.8s; }
+    
+    @keyframes slideIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .timeline-event {
+            margin-left: 20px;
+        }
+        
+        .timeline-event .flex {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .timeline-event .w-1\/2 {
+            width: 100%;
+            text-align: left !important;
+            padding-left: 2rem !important;
+            padding-right: 0 !important;
+        }
+        
+        .absolute.left-1\/2 {
+            left: 0;
+            transform: none;
+        }
+    }
+</style>
