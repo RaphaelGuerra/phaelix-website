@@ -64,7 +64,7 @@ python3 -m http.server 8000
 - Learnings: concise copy, clear sections, and clean CSS
 
 ## License
-Personal portfolio project — not for commercial use.
+All rights reserved. Personal portfolio project — not for production use.
 
 ---
 
