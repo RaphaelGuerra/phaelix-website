@@ -1,6 +1,6 @@
-# Phaelix AI Website
+# Phaelix — Product Website
 
-A modern, responsive website for Phaelix AI - Strategic AI for Ambitious Businesses.
+Lightweight, responsive landing for a product concept (Phaelix AI). Built as a static site to practice clean marketing pages and simple content structure.
 
 ## 🏗️ Project Structure
 
@@ -16,18 +16,10 @@ phaelix-website/
 └── README.md               # This file
 ```
 
-## 🖼️ Adding Images
-
-### Project Thumbnail
-1. **Place your image** in `assets/images/`
-2. **Recommended format**: JPG or WebP
-3. **Recommended size**: 800x600px or larger (16:9 ratio works well)
-4. **File name**: `project-thumbnail.jpg` (or update the path in HTML)
-
-### Image Optimization
-- **Compress images** for web (use tools like TinyPNG or ImageOptim)
-- **Use WebP format** for better performance (with JPG fallback)
-- **Keep file size** under 500KB for optimal loading
+## What It Does
+- Presents the value proposition and feature highlights
+- Links to a demo and contact
+- Focuses on speed, accessibility, and clarity
 
 ## 🎨 Customization
 
@@ -36,20 +28,15 @@ phaelix-website/
 - **Background**: Dark slate (#0F172A)
 - **Text**: Light slate (#E2E8F0)
 
-### Project Details
-Update the following in `index.html`:
-- **Project title**: "AI-Powered Business Solution"
-- **Description**: Your project description
-- **Key features**: List your project's main features
-- **Demo URL**: Update the "View Live Demo" link
+### Content
+Edit `index.html` to update:
+- Project title, punchy description, and key features
+- CTA link for demo or contact
 
-## 🚀 Features
-
-- **Responsive design** - Works on all devices
-- **Modern animations** - CSS-only effects for performance
-- **Accessibility** - WCAG compliant focus states
-- **SEO optimized** - Proper meta tags and structure
-- **Fast loading** - Optimized assets and minimal dependencies
+## Highlights
+- Responsive design, accessible focus states
+- Minimal dependencies, fast loading
+- SEO‑friendly tags and structure
 
 ## 📱 Browser Support
 
@@ -61,19 +48,23 @@ Update the following in `index.html`:
 ## 🔧 Development
 
 ### Local Development
-1. Open `index.html` in your browser
-2. Or use a local server: `python -m http.server 8000`
+Open `index.html` directly or serve with a static server:
+
+```bash
+python3 -m http.server 8000
+```
 
 ### Making Changes
 - **Styles**: Edit `assets/css/styles.css`
 - **Content**: Edit `index.html`
 - **Images**: Add to `assets/images/`
 
-## 📞 Contact
+## Status & Learnings
+- Functional landing practice for product storytelling
+- Learnings: concise copy, clear sections, and clean CSS
 
-For questions about this website or Phaelix AI services:
-- Email: contact@phaelix.com
-- Website: [Your domain when ready]
+## License
+Personal portfolio project — not for commercial use.
 
 ---
 
