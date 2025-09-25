@@ -81,7 +81,8 @@ class LanguageSwitcher {
             const option = document.createElement('button');
             option.className = 'language-option';
             option.setAttribute('data-lang', lang);
-            option.innerHTML = languageNames[lang];
+            // Use textContent to avoid HTML injection risk
+            option.textContent = languageNames[lang];
             dropdown.appendChild(option);
         });
 
