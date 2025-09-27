@@ -32,14 +32,16 @@ class LanguageSwitcher {
     createLanguageSwitchers() {
         const placeholders = document.querySelectorAll('.language-switcher');
 
-        // Replace each placeholder with an instance
+        // Hydrate placeholders: if empty (no .language-btn), create markup; otherwise leave as-is
         placeholders.forEach(ph => {
-            const parent = ph.parentElement;
-            const instance = this.createSwitcherHTML();
-            parent.replaceChild(instance, ph);
+            if (!ph.querySelector('.language-btn')) {
+                const instance = this.createSwitcherHTML();
+                // Replace placeholder with built instance to avoid nested containers
+                ph.replaceWith(instance);
+            }
         });
 
-        // If none found, insert one into header nav
+        // If none found, insert one into header nav as a convenience
         if (placeholders.length === 0) {
             const headerNav = document.querySelector('header nav');
             if (headerNav) {
