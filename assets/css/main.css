@@ -330,6 +330,10 @@ a:focus, button:focus {
     .language-switcher {
         margin-left: auto;
     }
+    /* In the mobile menu, do not push the switcher to the right */
+    #mobile-menu .language-switcher {
+        margin-left: 0;
+    }
     
     .language-dropdown {
         right: 0;
