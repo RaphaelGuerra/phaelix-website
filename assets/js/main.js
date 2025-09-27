@@ -19,6 +19,7 @@ class MainApp {
         this.initializeScrollEffects();
         this.initializeContactForm();
         this.initializeLazyGradio();
+        this.initializeMobileMenu();
         
         this.isInitialized = true;
     }
@@ -277,6 +278,48 @@ class MainApp {
             // Fallback: load after DOM ready
             setTimeout(load, 1000);
         }
+    }
+
+    /**
+     * Initialize mobile menu toggle and close behaviors
+     */
+    initializeMobileMenu() {
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (!menuBtn || !mobileMenu) return;
+
+        const openMenu = () => {
+            mobileMenu.classList.remove('hidden');
+            menuBtn.setAttribute('aria-expanded', 'true');
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+        };
+
+        const toggleMenu = () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+        };
+
+        // Toggle on button click
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Close on navigation link click
+        mobileMenu.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => closeMenu());
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            const within = mobileMenu.contains(e.target) || menuBtn.contains(e.target);
+            if (!within) closeMenu();
+        });
     }
 }
 

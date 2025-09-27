@@ -39,14 +39,30 @@
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Language Switcher (will be replaced by unified system) -->
-            <div class="language-switcher"></div>
             <h1 class="text-2xl font-bold tracking-tighter text-white">
                 <span data-key="brandName">Phaelix</span><span class="gradient-text">AI</span>
             </h1>
-            <a href="#contact" class="hidden sm:inline-block bg-indigo-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors glow-effect" data-key="contactUs">
-                Contact Us
-            </a>
+
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center space-x-6" role="navigation" aria-label="Main">
+                <!-- Desktop Language Switcher -->
+                <div class="hidden md:block"><div class="language-switcher"></div></div>
+                <a href="#contact" class="bg-indigo-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors glow-effect" data-key="contactUs">Contact Us</a>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button id="menu-btn" class="md:hidden focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-effect">
+            <!-- Mobile Language Switcher inside menu -->
+            <div class="flex justify-center py-3 border-b border-slate-700">
+                <div class="language-switcher"></div>
+            </div>
+            <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-slate-800" data-key="contactUs">Contact Us</a>
         </div>
     </header>
 
