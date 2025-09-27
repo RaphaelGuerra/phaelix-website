@@ -292,11 +292,13 @@ class MainApp {
         const openMenu = () => {
             mobileMenu.classList.remove('hidden');
             menuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
         };
 
         const closeMenu = () => {
             mobileMenu.classList.add('hidden');
             menuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
         };
 
         const toggleMenu = () => {
