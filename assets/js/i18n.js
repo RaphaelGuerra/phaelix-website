@@ -50,7 +50,8 @@ class I18nManager {
      */
     async loadTranslations(lang) {
         try {
-            const response = await fetch(`locales/${lang}.json`);
+            const version = 'v2'; // bump to invalidate client cache when strings change
+            const response = await fetch(`locales/${lang}.json?${version}`);
             if (!response.ok) {
                 throw new Error(`Failed to load translations for ${lang}`);
             }
@@ -153,31 +154,33 @@ class I18nManager {
      * Update language switcher UI
      */
     updateLanguageSwitcher() {
-        // Update dropdown button text
-        const currentLangBtn = document.getElementById('current-lang');
-        if (currentLangBtn) {
-            currentLangBtn.textContent = this.currentLanguage.toUpperCase();
-        }
-
-        // Update active state in dropdown
-        const languageOptions = document.querySelectorAll('.language-option');
-        languageOptions.forEach(option => {
-            const lang = option.getAttribute('data-lang');
-            if (lang === this.currentLanguage) {
-                option.classList.add('active');
-            } else {
-                option.classList.remove('active');
-            }
+        // Support both new and legacy markup
+        // New: multiple instances with .current-lang
+        document.querySelectorAll('.language-switcher').forEach(container => {
+            const cur = container.querySelector('.current-lang');
+            if (cur) cur.textContent = this.currentLanguage.toUpperCase();
+            container.querySelectorAll('.language-option').forEach(option => {
+                const lang = option.getAttribute('data-lang');
+                if (lang === this.currentLanguage) option.classList.add('active');
+                else option.classList.remove('active');
+            });
         });
 
-        // Update existing button styles (for backward compatibility)
+        // Legacy: single instance with #current-lang
+        const legacy = document.getElementById('current-lang');
+        if (legacy) legacy.textContent = this.currentLanguage.toUpperCase();
+        document.querySelectorAll('.language-option').forEach(option => {
+            const lang = option.getAttribute('data-lang');
+            if (lang === this.currentLanguage) option.classList.add('active');
+            else option.classList.remove('active');
+        });
+
+        // Legacy button group support
         const buttons = document.querySelectorAll('.lang-btn');
         buttons.forEach(btn => {
             btn.classList.remove('active');
             const btnLang = btn.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
-            if (btnLang === this.currentLanguage) {
-                btn.classList.add('active');
-            }
+            if (btnLang === this.currentLanguage) btn.classList.add('active');
         });
     }
 
