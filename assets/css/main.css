@@ -358,7 +358,7 @@ a:focus, button:focus {
 /* --- Mobile Fallbacks: ensure hamburger + overlay work even if Tailwind is late --- */
 @media (max-width: 767.98px) {
   /* Hide desktop nav at small widths regardless of Tailwind */
-  header nav[aria-label="Main"] {
+  header nav[aria-label="Main navigation"] {
     display: none !important;
   }
   /* Force hamburger visible */
