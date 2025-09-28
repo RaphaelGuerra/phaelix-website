@@ -271,6 +271,7 @@ a:focus, button:focus {
 .language-switcher {
   position: relative;
   display: inline-block;
+  margin-left: 0.5rem; /* give breathing room from left neighbor (e.g., logo) */
 }
 
 .language-btn {
@@ -314,6 +315,12 @@ a:focus, button:focus {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* Add spacing around the divider following the switcher */
+.language-switcher + .border-l {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .language-option {
