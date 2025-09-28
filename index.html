@@ -8,8 +8,8 @@
     <link rel="canonical" href="https://phaelix.com/">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <!-- Note: Tailwind CDN is used for development. For production, install Tailwind CSS as a PostCSS plugin -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS (compiled for production) -->
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://phaelix-phaelix-bot.hf.space" crossorigin>
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <script
         type="module"
-        src="https://gradio.s3-us-west-2.amazonaws.com/5.34.2/gradio.js">
+        src="https://gradio.s3-us-west-2.amazonaws.com/5.37.0/gradio.js">
     </script>
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
@@ -169,7 +169,7 @@
                                 
                                 <!-- Chat interface -->
                                 <gradio-app 
-                                    data-src="https://phaelix-phaelix-bot.hf.space/"
+                                    src="https://phaelix-phaelix-bot.hf.space/"
                                     class="relative w-full h-96 rounded-lg border border-slate-700 bg-slate-900/50 backdrop-blur-sm">
                                 </gradio-app>
                                 
