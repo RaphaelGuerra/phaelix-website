@@ -30,7 +30,7 @@ class LanguageSwitcher {
      * Create the language switcher HTML
      */
     createLanguageSwitchers() {
-        const placeholders = document.querySelectorAll('.language-switcher');
+        const placeholders = document.querySelectorAll('.desktop-lang-selector, .mobile-lang-selector, .language-switcher');
 
         // Hydrate placeholders: if empty (no .language-btn), create markup; otherwise leave as-is
         placeholders.forEach(ph => {
