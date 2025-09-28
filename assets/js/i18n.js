@@ -20,18 +20,16 @@ class I18nManager {
      * Initialize the i18n system
      */
     async initialize() {
-        // Get saved language preference or detect browser language
-        const savedLang = localStorage.getItem('preferredLanguage');
+        // Precedence: ?lang=xx > saved > browser
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
+        const savedLang = localStorage.getItem('preferredLanguage') || localStorage.getItem('preferred-language');
         const browserLang = this.detectBrowserLanguage();
-        const initialLang = savedLang || browserLang;
+        const initialLang = (urlLang && this.supportedLanguages.includes(urlLang))
+            ? urlLang
+            : (savedLang || browserLang);
 
-        // Load initial language
         await this.setLanguage(initialLang);
-        
-        // Update URL with language parameter
         this.updateURL();
-        
-        // Add hreflang tags for SEO
         this.addHreflangTags();
     }
 
@@ -93,8 +91,9 @@ class I18nManager {
         // Update language switcher
         this.updateLanguageSwitcher();
         
-        // Save preference
+        // Save preference (support both key names)
         localStorage.setItem('preferredLanguage', lang);
+        localStorage.setItem('preferred-language', lang);
         
         // Update URL
         this.updateURL();
@@ -132,22 +131,19 @@ class I18nManager {
      * Translate all elements with data-key attribute (Phaelix uses data-key instead of data-translate)
      */
     translatePage() {
-        const elements = document.querySelectorAll('[data-key]');
-        elements.forEach(element => {
-            const key = element.getAttribute('data-key');
+        // Support both data-key and data-translate patterns
+        const apply = (node, key) => {
             const translation = this.translations[this.currentLanguage]?.[key];
-            
-            if (translation) {
-                // Handle different element types
-                if (element.tagName === 'INPUT' && element.type === 'placeholder') {
-                    element.placeholder = translation;
-                } else if (element.tagName === 'META' && element.name === 'description') {
-                    element.content = translation;
-                } else {
-                    element.textContent = translation;
-                }
-            }
-        });
+            if (!translation) return;
+            const attr = node.getAttribute('data-translate-attr');
+            if (attr) { node.setAttribute(attr, translation); return; }
+            if (node.tagName === 'INPUT' && node.type === 'placeholder') node.placeholder = translation;
+            else if (node.tagName === 'META' && node.name === 'description') node.content = translation;
+            else node.textContent = translation;
+        };
+
+        document.querySelectorAll('[data-key]').forEach(el => apply(el, el.getAttribute('data-key')));
+        document.querySelectorAll('[data-translate]').forEach(el => apply(el, el.getAttribute('data-translate')));
     }
 
     /**
