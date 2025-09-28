@@ -29,6 +29,9 @@
     <meta name="twitter:title" content="Phaelix AI - Strategic AI for Ambitious Businesses">
     <meta name="twitter:description" content="Phaelix AI builds custom AI solutions for SMEs—automation, insights, and growth.">
     <meta name="twitter:image" content="https://phaelix.com/assets/images/eco-explorer-thumbnail.png">
+    <!-- i18n and language switcher should load before main app -->
+    <script defer src="assets/js/i18n.js"></script>
+    <script defer src="assets/js/language-switcher.js"></script>
     <!-- App scripts -->
     <script defer src="assets/js/main.js?v=3"></script>
 </head>
@@ -43,6 +46,17 @@
 
             <!-- Desktop nav -->
             <nav class="hidden md:flex items-center space-x-6" role="navigation" aria-label="Main">
+                <!-- Desktop language selector placeholder (replaced by JS dropdown) -->
+                <div class="flex space-x-2 text-sm text-slate-400 desktop-lang-selector">
+                    <a href="#" data-lang="en" class="hover:text-white transition-colors">EN</a>
+                    <span>/</span>
+                    <a href="#" data-lang="pt" class="hover:text-white transition-colors">PT</a>
+                    <span>/</span>
+                    <a href="#" data-lang="fr" class="hover:text-white transition-colors">FR</a>
+                    <span>/</span>
+                    <a href="#" data-lang="es" class="hover:text-white transition-colors">ES</a>
+                </div>
+                <div class="border-l border-slate-700 h-6"></div>
                 <a href="#solutions" class="text-slate-300 hover:text-indigo-300 transition-colors" data-key="navSolutions">Our Solutions</a>
                 <a href="#story" class="text-slate-300 hover:text-indigo-300 transition-colors" data-key="navStory">Our Story</a>
                 <a href="#work" class="text-slate-300 hover:text-indigo-300 transition-colors" data-key="navWork">Selected Work</a>
@@ -64,6 +78,13 @@
             <a href="#ai-bot" class="block py-3 px-6 text-slate-300 hover:bg-slate-800" data-key="navMeet">Meet the AI Bot</a>
             <div class="border-t border-slate-700 my-2"></div>
             <a href="#contact" class="block py-3 px-6 text-slate-300 hover:bg-slate-800" data-key="contactUs">Contact Us</a>
+            <!-- Mobile inline language selector -->
+            <div class="flex justify-center space-x-4 py-2 text-slate-400 mobile-lang-selector">
+                <a href="#" data-lang="en" class="hover:text-white transition-colors">EN</a>
+                <a href="#" data-lang="pt" class="hover:text-white transition-colors">PT</a>
+                <a href="#" data-lang="fr" class="hover:text-white transition-colors">FR</a>
+                <a href="#" data-lang="es" class="hover:text-white transition-colors">ES</a>
+            </div>
         </div>
     </header>
 

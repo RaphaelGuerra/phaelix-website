@@ -259,4 +259,112 @@ a:focus, button:focus {
         right: 0;
         min-width: 7rem;
     }
-} 
+}
+
+/* --- Language Switcher Styles --- */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  min-width: 8rem;
+  background: rgba(31, 41, 55, 0.95); /* Slate-800 */
+  border: 1px solid rgba(99, 102, 241, 0.35); /* Indigo tint */
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+}
+
+.language-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  color: #E2E8F0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.language-option:hover {
+  background: rgba(99, 102, 241, 0.12);
+  color: #C7D2FE;
+}
+
+.language-option.active {
+  background: rgba(99, 102, 241, 0.18);
+  color: #C7D2FE;
+  font-weight: 600;
+}
+
+/* --- Mobile Fallbacks: ensure hamburger + overlay work even if Tailwind is late --- */
+@media (max-width: 767.98px) {
+  /* Hide desktop nav at small widths regardless of Tailwind */
+  header nav[aria-label="Main"] {
+    display: none !important;
+  }
+  /* Force hamburger visible */
+  #menu-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Mobile menu overlay behavior */
+  #mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 9999;
+  }
+  #mobile-menu a {
+    touch-action: manipulation;
+  }
+  /* Active state for inline mobile language links */
+  .mobile-lang-selector a.active {
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
