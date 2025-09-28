@@ -1,10 +1,16 @@
 /* Phaelix AI - Main Styles */
 
-body {
+html, body {
     font-family: 'Inter', sans-serif;
     background-color: #0F172A; /* Slate 900 */
     color: #E2E8F0; /* Slate 200 */
     overflow-x: hidden;
+}
+
+/* Prevent wide media from causing sideways scroll */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
 }
 
 .gradient-text {
