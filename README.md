@@ -3,7 +3,6 @@
 Last updated: 2025-11-29
 [![Lint](https://github.com/RaphaelGuerra/phaelix-website/actions/workflows/lint.yml/badge.svg)](https://github.com/RaphaelGuerra/phaelix-website/actions/workflows/lint.yml)
 [![Security](https://github.com/RaphaelGuerra/phaelix-website/actions/workflows/security.yml/badge.svg)](https://github.com/RaphaelGuerra/phaelix-website/actions/workflows/security.yml)
-Live deployment: none (run locally)
 
 ## Table of Contents
 
