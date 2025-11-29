@@ -10,7 +10,7 @@ Last updated: 2025-11-29
 - [Local Dev](#local-dev)
 - [Deploy](#deploy)
 - [Notes](#notes)
-- [Status & License](#status-license)
+- [Status & License](#status--license)
 <!-- TOC end -->
 
 ## Overview
