@@ -16,7 +16,6 @@ Last updated: 2025-11-30
 [![Lint](https://github.com/RaphaelGuerra/phaelix-website/actions/workflows/lint.yml/badge.svg)](https://github.com/RaphaelGuerra/phaelix-website/actions/workflows/lint.yml)
 [![Security](https://github.com/RaphaelGuerra/phaelix-website/actions/workflows/security.yml/badge.svg)](https://github.com/RaphaelGuerra/phaelix-website/actions/workflows/security.yml)
 
-
 ## Overview
 
 - Marketing/landing website for Phaelix.
