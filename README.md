@@ -1,6 +1,6 @@
 # Phaelix Website
 
-Last updated: 2025-12-08
+Last updated: 2025-12-11
 
 ## Table of Contents
 
