@@ -74,6 +74,9 @@ npx serve . -l 5173
 - For iterative work, you can run Tailwind in watch mode:
 
 ```bash
+npm run dev
+
+# or:
 npx tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css \\
   -o assets/css/tailwind.css --watch
 ```

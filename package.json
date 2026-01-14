@@ -4,7 +4,8 @@
   "description": "",
   "main": "tailwind.config.js",
   "scripts": {
-    "build:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css -o assets/css/tailwind.css --minify"
+    "build:css": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css -o assets/css/tailwind.css --minify",
+    "dev": "tailwindcss -c tailwind.config.js -i assets/css/tailwind.input.css -o assets/css/tailwind.css --watch"
   },
   "repository": {
     "type": "git",
