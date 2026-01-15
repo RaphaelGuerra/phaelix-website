@@ -23,9 +23,8 @@ class I18nManager {
     const urlLang = new URLSearchParams(window.location.search).get('lang');
     const savedLang = localStorage.getItem('preferred-language');
     const browserLang = this.detectBrowserLanguage();
-    const initialLang = (urlLang && this.supportedLanguages.includes(urlLang))
-      ? urlLang
-      : (savedLang || browserLang);
+    const initialLang =
+      urlLang && this.supportedLanguages.includes(urlLang) ? urlLang : savedLang || browserLang;
 
     await this.setLanguage(initialLang);
     this.updateURL();
@@ -188,4 +187,3 @@ window.i18n = new I18nManager();
 document.addEventListener('DOMContentLoaded', () => {
   window.i18n.initialize();
 });
-

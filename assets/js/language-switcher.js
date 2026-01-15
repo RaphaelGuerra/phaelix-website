@@ -38,7 +38,9 @@ class LanguageSwitcher {
     }
 
     // Otherwise, inject at start of desktop nav
-    const headerNav = document.querySelector('header nav[aria-label="Main navigation"]') || document.querySelector('header nav');
+    const headerNav =
+      document.querySelector('header nav[aria-label="Main navigation"]') ||
+      document.querySelector('header nav');
     if (headerNav) {
       const newSwitcher = this.createSwitcherHTML();
       headerNav.insertBefore(newSwitcher, headerNav.firstChild);
