@@ -9,7 +9,7 @@ class I18nManager {
   constructor() {
     this.currentLanguage = 'en';
     this.translations = {};
-    this.supportedLanguages = ['en', 'pt', 'fr', 'es'];
+    this.supportedLanguages = ['en', 'fr', 'es', 'pt'];
     this.languageNames = {
       en: '🇺🇸 English',
       pt: '🇧🇷 Português',

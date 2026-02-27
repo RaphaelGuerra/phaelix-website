@@ -37,13 +37,13 @@ class LanguageSwitcher {
       return;
     }
 
-    // Otherwise, inject at start of desktop nav
+    // Otherwise, inject at end of desktop nav
     const headerNav =
       document.querySelector('header nav[aria-label="Main navigation"]') ||
       document.querySelector('header nav');
     if (headerNav) {
       const newSwitcher = this.createSwitcherHTML();
-      headerNav.insertBefore(newSwitcher, headerNav.firstChild);
+      headerNav.appendChild(newSwitcher);
     }
   }
 
@@ -162,7 +162,7 @@ class LanguageSwitcher {
 
       selector = document.createElement('div');
       selector.className = 'flex justify-center space-x-4 py-2 text-slate-400 mobile-lang-selector';
-      ['en', 'pt', 'fr', 'es'].forEach((l) => {
+      ['en', 'fr', 'es', 'pt'].forEach((l) => {
         const a = document.createElement('a');
         a.href = '#';
         a.setAttribute('data-lang', l);
