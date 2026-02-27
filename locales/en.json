@@ -11,5 +11,12 @@
   "heroTitle": "Strategic AI for ",
   "heroTitleHighlight": "Ambitious Businesses",
   "heroDescription": "Phaelix AI bridges the gap between your business and its potential. We deliver custom AI solutions that automate processes, uncover critical insights, and drive sustainable growth for Small and Medium-sized Enterprises.",
-  "bookStrategySession": "Book a Free Strategy Session"
+  "bookStrategySession": "Book a Free Strategy Session",
+  "workGandalfTitle": "Gandalf (OpenClaw)",
+  "workGandalfDesc": "Private personal assistant built with OpenClaw — long‑term memory helper with guardrails and safety backups.",
+  "privateLabel": "Private",
+  "learnMoreLabel": "Learn more",
+  "moltbookLabel": "Moltbook",
+  "projectIndexGandalf": "Gandalf (OpenClaw) — Learn more",
+  "projectIndexGandalfMoltbook": "Gandalf (OpenClaw) — Moltbook"
 }

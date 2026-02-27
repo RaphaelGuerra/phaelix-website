@@ -11,5 +11,12 @@
   "heroTitle": "IA Estratégica para ",
   "heroTitleHighlight": "Negócios Ambiciosos",
   "heroDescription": "A Phaelix AI aproxima sua empresa do seu potencial. Entregamos soluções de IA personalizadas que automatizam processos, revelam insights críticos e impulsionam crescimento sustentável para Pequenas e Médias Empresas.",
-  "bookStrategySession": "Agendar uma Sessão Gratuita"
+  "bookStrategySession": "Agendar uma Sessão Gratuita",
+  "workGandalfTitle": "Gandalf (OpenClaw)",
+  "workGandalfDesc": "Assistente pessoal privado criado com OpenClaw — memória de longo prazo com guardrails e backups de segurança.",
+  "privateLabel": "Privado",
+  "learnMoreLabel": "Saiba mais",
+  "moltbookLabel": "Moltbook",
+  "projectIndexGandalf": "Gandalf (OpenClaw) — Saiba mais",
+  "projectIndexGandalfMoltbook": "Gandalf (OpenClaw) — Moltbook"
 }
