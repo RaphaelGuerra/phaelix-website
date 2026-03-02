@@ -1,11 +1,10 @@
 # Phaelix Website
 
-Last updated: 2026-02-21
+Last updated: 2026-03-02
 
 ## Table of Contents
 
 <!-- TOC start -->
-
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
 - [Local Dev](#local-dev)
