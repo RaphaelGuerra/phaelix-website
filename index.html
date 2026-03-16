@@ -57,9 +57,9 @@
     <!-- Header Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
       <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold tracking-tighter text-white">
+        <a href="/" class="text-2xl font-bold tracking-tighter text-white" aria-label="Go to homepage">
           <span data-key="brandName">Phaelix</span><span class="gradient-text">AI</span>
-        </h1>
+        </a>
 
         <!-- Desktop nav -->
         <nav
@@ -74,16 +74,16 @@
             >Our Solutions</a
           >
           <a
-            href="#story"
-            class="text-slate-300 hover:text-indigo-300 transition-colors"
-            data-key="navStory"
-            >Our Story</a
-          >
-          <a
             href="#work"
             class="text-slate-300 hover:text-indigo-300 transition-colors"
             data-key="navWork"
             >Selected Work</a
+          >
+          <a
+            href="#story"
+            class="text-slate-300 hover:text-indigo-300 transition-colors"
+            data-key="navStory"
+            >Our Story</a
           >
           <a
             href="chat.html"
@@ -149,14 +149,14 @@
           data-key="navSolutions"
           >Our Solutions</a
         >
+        <a href="#work" class="block py-3 px-6 text-slate-300 hover:bg-slate-800" data-key="navWork"
+          >Selected Work</a
+        >
         <a
           href="#story"
           class="block py-3 px-6 text-slate-300 hover:bg-slate-800"
           data-key="navStory"
           >Our Story</a
-        >
-        <a href="#work" class="block py-3 px-6 text-slate-300 hover:bg-slate-800" data-key="navWork"
-          >Selected Work</a
         >
         <a
           href="chat.html"
@@ -181,7 +181,7 @@
       </nav>
     </header>
 
-    <main>
+    <main class="flex flex-col">
       <!-- Section: Hero (moved to top) -->
       <section
         id="hero"
@@ -232,7 +232,7 @@
         </div>
       </section>
       <!-- Section 1: AI Bot Demo -->
-      <section id="ai-bot" class="py-20 md:py-32 relative pt-32">
+      <section id="ai-bot" class="py-20 md:py-32 relative pt-32" style="order: 7">
         <!-- Animated background with tech pattern -->
         <div
           class="absolute inset-0"
@@ -315,7 +315,7 @@
       </section>
 
       <!-- Selected Work -->
-      <section id="work" class="py-20 md:py-32 relative">
+      <section id="work" class="py-20 md:py-32 relative" style="order: 3">
         <div class="container mx-auto px-6 relative z-10">
           <div class="text-center mb-12">
             <h3
@@ -900,7 +900,7 @@
       </section>
 
       <!-- Project Index -->
-      <section id="project-index" class="py-12 md:py-16 relative">
+      <section id="project-index" class="py-12 md:py-16 relative" style="order: 4">
         <div class="container mx-auto px-6 relative z-10">
           <div class="gradient-border">
             <div class="p-6 md:p-8">
@@ -1060,7 +1060,7 @@
       </section>
 
       <!-- Section 2: Featured Project -->
-      <section id="project" class="py-20 md:py-32 relative">
+      <section id="project" class="py-20 md:py-32 relative" style="order: 5">
         <!-- Animated background with tech pattern -->
         <div
           class="absolute inset-0"
@@ -1232,7 +1232,7 @@
       </section>
 
       <!-- Section 3: The Story -->
-      <section id="story" class="py-20 md:py-32 relative">
+      <section id="story" class="py-20 md:py-32 relative" style="order: 6">
         <!-- Background pattern -->
         <div
           class="absolute inset-0"
@@ -1298,7 +1298,7 @@
       </section>
 
       <!-- Section 4: Solutions -->
-      <section id="solutions" class="py-20 md:py-32 relative">
+      <section id="solutions" class="py-20 md:py-32 relative" style="order: 2">
         <!-- Animated grid background -->
         <div
           class="absolute inset-0"
@@ -1458,7 +1458,7 @@
       </section>
 
       <!-- Section 5: Final CTA / Contact -->
-      <section id="contact" class="py-20 md:py-32 relative">
+      <section id="contact" class="py-20 md:py-32 relative" style="order: 8">
         <!-- Radial gradient background -->
         <div
           class="absolute inset-0"
