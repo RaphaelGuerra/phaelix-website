@@ -247,6 +247,7 @@ class MainApp {
       ready = true;
       chatbotShell.classList.add('is-ready');
       chatbotEmbed.setAttribute('aria-busy', 'false');
+      this.restoreHashTargetAfterEmbedReady(chatbotShell);
       observer.disconnect();
       if (fallbackTimer) {
         clearTimeout(fallbackTimer);
@@ -265,6 +266,25 @@ class MainApp {
   }
 
   /**
+   * Keep active hash navigation stable if the embed steals focus on first load.
+   */
+  restoreHashTargetAfterEmbedReady(chatbotShell) {
+    const hash = window.location.hash?.replace(/^#/, '');
+    if (!hash || hash === 'ai-bot') return;
+
+    const target = document.getElementById(hash);
+    if (!target) return;
+
+    if (chatbotShell.contains(document.activeElement)) {
+      document.activeElement.blur?.();
+    }
+
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ block: 'start', inline: 'nearest' });
+    });
+  }
+
+  /**
    * Initialize mobile menu toggle and close behaviors
    */
   initializeMobileMenu() {
@@ -277,13 +297,11 @@ class MainApp {
     const openMenu = () => {
       mobileMenu.classList.remove('hidden');
       menuBtn.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
     };
 
     const closeMenu = () => {
       mobileMenu.classList.add('hidden');
       menuBtn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
     };
 
     const toggleMenu = () => {
@@ -304,6 +322,11 @@ class MainApp {
     // Close on section navigation link click only
     mobileMenu.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
       link.addEventListener('click', () => closeMenu());
+    });
+
+    // Keep outside-click logic isolated from menu interactions.
+    mobileMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
 
     // Close on outside click
