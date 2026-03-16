@@ -1,6 +1,6 @@
 /**
  * Main JavaScript functionality for Phaelix AI website
- * Handles video modal, smooth scrolling, and other interactive features
+ * Handles video modal, chatbot shell stabilization, and interactive features
  */
 
 class MainApp {
@@ -15,10 +15,9 @@ class MainApp {
     if (this.isInitialized) return;
 
     this.initializeVideoModal();
-    this.initializeSmoothScrolling();
     this.initializeScrollEffects();
     this.initializeContactForm();
-    this.initializeLazyGradio();
+    this.initializeChatbotShell();
     this.initializeMobileMenu();
 
     this.isInitialized = true;
@@ -73,34 +72,6 @@ class MainApp {
         backdrop.addEventListener('click', window.closeVideoModal);
       }
     }
-  }
-
-  /**
-   * Initialize smooth scrolling for anchor links
-   */
-  initializeSmoothScrolling() {
-    const links = document.querySelectorAll('a[href^="#"]');
-
-    links.forEach((link) => {
-      link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-
-        if (href === '#') return;
-
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-
-          const headerHeight = document.querySelector('header')?.offsetHeight || 0;
-          const targetPosition = target.offsetTop - headerHeight - 20;
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth',
-          });
-        }
-      });
-    });
   }
 
   /**
@@ -253,35 +224,44 @@ class MainApp {
   }
 
   /**
-   * Lazy-load Gradio app when in viewport
+   * Stabilize chatbot area while external embed initializes
    */
-  initializeLazyGradio() {
-    const gradioApp = document.querySelector('gradio-app[data-src]');
-    if (!gradioApp) return;
+  initializeChatbotShell() {
+    const chatbotShell = document.querySelector('[data-chatbot-shell]');
+    const chatbotEmbed = chatbotShell?.querySelector('gradio-app');
+    if (!chatbotShell || !chatbotEmbed) return;
 
-    const load = () => {
-      if (!gradioApp.getAttribute('src')) {
-        gradioApp.setAttribute('src', gradioApp.getAttribute('data-src'));
+    let ready = false;
+    let fallbackTimer = null;
+    const observer = new MutationObserver(() => {
+      if (
+        chatbotEmbed.querySelector('iframe') ||
+        chatbotEmbed.shadowRoot?.querySelector('iframe')
+      ) {
+        markReady();
+      }
+    });
+
+    const markReady = () => {
+      if (ready) return;
+      ready = true;
+      chatbotShell.classList.add('is-ready');
+      chatbotEmbed.setAttribute('aria-busy', 'false');
+      observer.disconnect();
+      if (fallbackTimer) {
+        clearTimeout(fallbackTimer);
+        fallbackTimer = null;
       }
     };
 
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              load();
-              observer.disconnect();
-            }
-          });
-        },
-        { rootMargin: '200px' },
-      );
-      observer.observe(gradioApp);
-    } else {
-      // Fallback: load after DOM ready
-      setTimeout(load, 1000);
-    }
+    chatbotEmbed.setAttribute('aria-busy', 'true');
+    observer.observe(chatbotEmbed, { childList: true, subtree: true });
+
+    ['load', 'ready', 'gradio-ready', 'gradio-loaded'].forEach((eventName) => {
+      chatbotEmbed.addEventListener(eventName, markReady, { once: true });
+    });
+
+    fallbackTimer = window.setTimeout(markReady, 6000);
   }
 
   /**
@@ -290,6 +270,7 @@ class MainApp {
   initializeMobileMenu() {
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const closeEventName = 'phaelix:close-mobile-menu';
 
     if (!menuBtn || !mobileMenu) return;
 
@@ -316,8 +297,12 @@ class MainApp {
     // Toggle on button click
     menuBtn.addEventListener('click', toggleMenu);
 
-    // Close on navigation link click
-    mobileMenu.querySelectorAll('a[href^="#"]').forEach((link) => {
+    // Expose one close path so other components can close the menu safely.
+    document.addEventListener(closeEventName, closeMenu);
+    window.closeMobileMenu = closeMenu;
+
+    // Close on section navigation link click only
+    mobileMenu.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
       link.addEventListener('click', () => closeMenu());
     });
 

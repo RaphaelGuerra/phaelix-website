@@ -2,7 +2,7 @@
  * Unified Language Switcher Component (desktop dropdown + mobile inline)
  * - Desktop: replaces .desktop-lang-selector with dropdown
  * - Mobile: preserves/ensures .mobile-lang-selector anchors inside #mobile-menu
- * - Robust events: preventDefault on [data-lang], explicit binding inside mobile menu
+ * - Robust events: preventDefault on [data-lang], uses shared mobile-menu close event
  */
 
 class LanguageSwitcher {
@@ -128,28 +128,12 @@ class LanguageSwitcher {
       e.preventDefault();
       this.changeLanguage(lang);
 
-      // If it came from inside mobile menu, close it and sync ARIA
+      // If it came from inside mobile menu, close through shared menu handler
       const mobileMenu = document.getElementById('mobile-menu');
       if (mobileMenu && mobileMenu.contains(target)) {
-        mobileMenu.classList.add('hidden');
-        document.getElementById('menu-btn')?.setAttribute('aria-expanded', 'false');
+        this.requestMobileMenuClose();
       }
     });
-
-    // Explicit local binding inside #mobile-menu to avoid bubbling edge cases
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu) {
-      mobileMenu.addEventListener('click', (e) => {
-        const target = e.target.closest('[data-lang]');
-        if (!target) return;
-        const lang = target.getAttribute('data-lang');
-        if (!lang) return;
-        e.preventDefault();
-        this.changeLanguage(lang);
-        mobileMenu.classList.add('hidden');
-        document.getElementById('menu-btn')?.setAttribute('aria-expanded', 'false');
-      });
-    }
   }
 
   ensureMobileSelector() {
@@ -184,6 +168,10 @@ class LanguageSwitcher {
 
   async changeLanguage(lang) {
     if (window.i18n) await window.i18n.setLanguage(lang);
+  }
+
+  requestMobileMenuClose() {
+    document.dispatchEvent(new Event('phaelix:close-mobile-menu'));
   }
 
   updateDisplay() {

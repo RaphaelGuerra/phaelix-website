@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -311,11 +311,19 @@
                   ></div>
 
                   <!-- Chat interface -->
-                  <gradio-app
-                    src="https://phaelix-phaelix-bot.hf.space/"
-                    class="relative w-full h-96 rounded-lg border border-slate-700 bg-slate-900/50 backdrop-blur-sm"
+                  <div
+                    class="chatbot-shell relative w-full rounded-lg border border-slate-700 bg-slate-900/50 backdrop-blur-sm"
+                    data-chatbot-shell
                   >
-                  </gradio-app>
+                    <div class="chatbot-loading" aria-hidden="true">
+                      <div class="chatbot-loading-bar full"></div>
+                      <div class="chatbot-loading-bar medium"></div>
+                      <div class="chatbot-loading-bar short"></div>
+                      <div class="chatbot-loading-bar full"></div>
+                    </div>
+                    <gradio-app src="https://phaelix-phaelix-bot.hf.space/" class="chatbot-embed">
+                    </gradio-app>
+                  </div>
 
                   <!-- Floating status indicator -->
                   <div
@@ -494,7 +502,8 @@
                   </div>
                 </div>
                 <p class="text-slate-300" data-key="workGandalfDesc">
-                  Private personal assistant built with OpenClaw — long‑term memory helper with guardrails and safety backups.
+                  Private personal assistant built with OpenClaw — long‑term memory helper with
+                  guardrails and safety backups.
                 </p>
               </div>
             </div>
