@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet the AI Bot | Phaelix AI</title>
+    <meta
+      name="description"
+      content="Chat with the Phaelix AI bot in a dedicated full-page interface."
+    />
+    <link rel="canonical" href="https://phaelix.com/chat.html" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>"
+    />
+    <link rel="preconnect" href="https://gradio.s3-us-west-2.amazonaws.com" crossorigin />
+    <link rel="preconnect" href="https://phaelix-phaelix-bot.hf.space" crossorigin />
+
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.37.0/gradio.js"></script>
+    <script defer src="assets/js/chat-page.js"></script>
+  </head>
+  <body class="antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold tracking-tighter text-white"
+          ><span>Phaelix</span><span class="gradient-text">AI</span></a
+        >
+        <a
+          href="index.html"
+          class="bg-indigo-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors"
+          >Back to Home</a
+        >
+      </div>
+    </header>
+
+    <main class="min-h-screen pt-28 pb-12 relative overflow-hidden">
+      <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <div class="absolute inset-0 geometric-bg"></div>
+
+      <section class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-10">
+          <p class="text-sm uppercase tracking-[0.35em] text-indigo-400 mb-3">Dedicated AI Chat</p>
+          <h1 class="text-3xl md:text-5xl font-bold text-white mb-3">Meet RaphaelBot</h1>
+          <p class="max-w-3xl mx-auto text-lg text-slate-300">
+            Ask questions about capabilities, solutions, and services in real time.
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto gradient-border">
+          <div class="p-4 md:p-6">
+            <div class="chatbot-shell rounded-lg border border-slate-700 bg-slate-900/50" data-chatbot-shell style="min-height: 70vh; height: min(70vh, 48rem);">
+              <div class="chatbot-loading" aria-hidden="true">
+                <div class="chatbot-loading-bar full"></div>
+                <div class="chatbot-loading-bar medium"></div>
+                <div class="chatbot-loading-bar short"></div>
+                <div class="chatbot-loading-bar full"></div>
+              </div>
+              <gradio-app src="https://phaelix-phaelix-bot.hf.space/" class="chatbot-embed"></gradio-app>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

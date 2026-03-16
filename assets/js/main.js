@@ -1,6 +1,6 @@
 /**
  * Main JavaScript functionality for Phaelix AI website
- * Handles video modal, chatbot shell stabilization, and interactive features
+ * Handles homepage interactions and interactive features
  */
 
 class MainApp {
@@ -17,7 +17,6 @@ class MainApp {
     this.initializeVideoModal();
     this.initializeScrollEffects();
     this.initializeContactForm();
-    this.initializeChatbotShell();
     this.initializeMobileMenu();
 
     this.isInitialized = true;
@@ -224,67 +223,6 @@ class MainApp {
   }
 
   /**
-   * Stabilize chatbot area while external embed initializes
-   */
-  initializeChatbotShell() {
-    const chatbotShell = document.querySelector('[data-chatbot-shell]');
-    const chatbotEmbed = chatbotShell?.querySelector('gradio-app');
-    if (!chatbotShell || !chatbotEmbed) return;
-
-    let ready = false;
-    let fallbackTimer = null;
-    const observer = new MutationObserver(() => {
-      if (
-        chatbotEmbed.querySelector('iframe') ||
-        chatbotEmbed.shadowRoot?.querySelector('iframe')
-      ) {
-        markReady();
-      }
-    });
-
-    const markReady = () => {
-      if (ready) return;
-      ready = true;
-      chatbotShell.classList.add('is-ready');
-      chatbotEmbed.setAttribute('aria-busy', 'false');
-      this.restoreHashTargetAfterEmbedReady(chatbotShell);
-      observer.disconnect();
-      if (fallbackTimer) {
-        clearTimeout(fallbackTimer);
-        fallbackTimer = null;
-      }
-    };
-
-    chatbotEmbed.setAttribute('aria-busy', 'true');
-    observer.observe(chatbotEmbed, { childList: true, subtree: true });
-
-    ['load', 'ready', 'gradio-ready', 'gradio-loaded'].forEach((eventName) => {
-      chatbotEmbed.addEventListener(eventName, markReady, { once: true });
-    });
-
-    fallbackTimer = window.setTimeout(markReady, 6000);
-  }
-
-  /**
-   * Keep active hash navigation stable if the embed steals focus on first load.
-   */
-  restoreHashTargetAfterEmbedReady(chatbotShell) {
-    const hash = window.location.hash?.replace(/^#/, '');
-    if (!hash || hash === 'ai-bot') return;
-
-    const target = document.getElementById(hash);
-    if (!target) return;
-
-    if (chatbotShell.contains(document.activeElement)) {
-      document.activeElement.blur?.();
-    }
-
-    requestAnimationFrame(() => {
-      target.scrollIntoView({ block: 'start', inline: 'nearest' });
-    });
-  }
-
-  /**
    * Initialize mobile menu toggle and close behaviors
    */
   initializeMobileMenu() {
@@ -319,8 +257,8 @@ class MainApp {
     document.addEventListener(closeEventName, closeMenu);
     window.closeMobileMenu = closeMenu;
 
-    // Close on section navigation link click only
-    mobileMenu.querySelectorAll('a[href^="#"]:not([href="#"])').forEach((link) => {
+    // Close menu for all navigation links except language links (href="#").
+    mobileMenu.querySelectorAll('a:not([href="#"])').forEach((link) => {
       link.addEventListener('click', () => closeMenu());
     });
 
