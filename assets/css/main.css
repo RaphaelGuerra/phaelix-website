@@ -296,6 +296,45 @@ button:focus {
   visibility: hidden;
 }
 
+.chat-page-main {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 5.75rem;
+  padding-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.chat-page-section {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.chat-page-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.chat-standalone-frame {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.chat-standalone-frame > div {
+  padding: 0.875rem;
+}
+
+.chatbot-shell--standalone {
+  min-height: 28rem;
+  height: min(34rem, calc(100vh - 7.5rem));
+  height: min(34rem, calc(100svh - 7.5rem));
+}
+
 .chatbot-loading-bar {
   height: 0.85rem;
   border-radius: 9999px;
@@ -359,6 +398,16 @@ button:focus {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .chat-page-heading h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .chat-page-heading p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .gradient-border > div {
     padding: 16px;
   }
@@ -405,6 +454,25 @@ button:focus {
   .chatbot-shell {
     min-height: var(--chatbot-height-desktop);
     height: var(--chatbot-height-desktop);
+  }
+
+  .chat-page-main {
+    padding-top: 6.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .chat-page-heading {
+    margin-bottom: 1.75rem;
+  }
+
+  .chat-standalone-frame > div {
+    padding: 1rem;
+  }
+
+  .chatbot-shell--standalone {
+    min-height: 30rem;
+    height: min(40rem, calc(100vh - 9rem));
+    height: min(40rem, calc(100svh - 9rem));
   }
 }
 
